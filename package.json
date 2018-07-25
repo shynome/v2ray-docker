@@ -1,5 +1,5 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.3-0",
   "scripts": {
     "postversion": "git push --follow-tags",
     "set_tags": "echo \"$(node set_tag.js)\">.tags"
