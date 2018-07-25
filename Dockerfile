@@ -1,6 +1,6 @@
 FROM v2ray/official
 
-COPY v2ray-entrypoint /v2ray-start
+COPY v2ray-start /v2ray-start
 RUN chmod +x /v2ray-start/main
 
 VOLUME [ "/var/log/v2ray" ]
