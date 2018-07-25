@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+# 必须提供 password , 否则不能保证容器一致性
+if [ w = w$password ] ; then
+  echo 'env password is required.'
+  exit 1
+fi
+
+v2ray_config=$(cat /v2ray-start/tpl.json | sed s/{{password}}/$password/g)
+
+echo $v2ray_config>/etc/v2ray/config.json
+
+v2ray -config=/etc/v2ray/config.json
