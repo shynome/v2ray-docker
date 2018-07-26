@@ -5,21 +5,26 @@
     "loglevel": "warning"
   },
   "inbound": {
-    "port": 3002,
-    "protocol": "http",
-    "settings": {
-      "timeout": 0,
-      "allowTransparent": false,
-      "userLevel": 0,
-      "accounts": [
-        {
-          "user": "{{password}}",
-          "pass": ""
-        }
-      ]
-    }
+    "protocol": "socks",
+    "port": 3001,
+    "settings": { "auth":"noauth" }
   },
   "inboundDetour":[
+    {
+      "port": 3002,
+      "protocol": "http",
+      "settings": {
+        "timeout": 0,
+        "allowTransparent": false,
+        "userLevel": 0,
+        "accounts": [
+          {
+            "user": "{{password}}",
+            "pass": ""
+          }
+        ]
+      }
+    },
     {
       "protocol": "shadowsocks",
       "port": 3003,
