@@ -7,7 +7,12 @@
   "inbound": {
     "protocol": "socks",
     "port": 3001,
-    "settings": { "auth":"noauth" }
+    "settings": {
+      "auth": "noauth",
+      "accounts": [
+        { "user": "{{PASSWORD}}", "password": "" }
+      ]
+    }
   },
   "inboundDetour":[
     {
@@ -19,7 +24,7 @@
         "userLevel": 0,
         "accounts": [
           {
-            "user": "{{password}}",
+            "user": "{{PASSWORD}}",
             "pass": ""
           }
         ]
@@ -31,7 +36,7 @@
       "settings": {
         "method": "aes-256-cfb",
         "ota": false,
-        "password": "{{password}}"
+        "password": "{{PASSWORD}}"
       }
     }
   ],
