@@ -12,7 +12,7 @@ pipeline:
   set_tags:
     image: node:carbon-alpine
     commands:
-    - npm run set_tags
+    - node -e "s='';require('https').get('https://gitlab.com/shynome/drone-utils/raw/master/set_tags.js',r=>r.on('data',d=>s+=d).on('end',()=>console.log(s)))" | node
     
   publish:
     image: plugins/docker
